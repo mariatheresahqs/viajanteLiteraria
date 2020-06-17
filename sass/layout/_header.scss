@@ -1,0 +1,58 @@
+.header {
+    height: 95vh;
+    background-image: radial-gradient(circle,
+        rgba($color-gold-dark, .5),
+        rgba($color-gold, .5)),
+        url(../img/Bg-TheBook.jpg);
+    background-size: cover;
+    background-position: top;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 95vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 95vh, 0 100%);
+    position: relative;
+
+    &__logo-box {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+
+        @include respond(tab-port){
+            top: 3rem;
+            left: 3rem;
+        }
+    }
+
+    &__logo {
+        height: 10rem;
+
+        @include respond(tab-port){
+            height: 8rem;
+        }
+
+        @include respond(phone) {
+            height: 7rem;
+        }
+    }
+
+    &__logo:hover {
+        // height: 10.1rem;
+        transform: translateY(0.2rem) translateX(.2rem);
+    }
+
+    &__logo:active {
+        transform: translateY(-0.1rem);
+    }
+
+    &__text-box {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+
+
+        @include respond(tab-port) {
+            top: 50%;
+        }
+    }
+}
+

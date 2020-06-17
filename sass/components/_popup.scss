@@ -1,0 +1,88 @@
+.popup {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba($color-gold, .9), rgba($color-gold-dark, .8));
+    z-index: 10000;
+    transition: transform .5s;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s;
+
+    &__content {
+        @include absCenter;
+        width: 75%;
+        background-color: rgba($color-white, 1);
+        box-shadow: 0 2rem 2rem rgba($color-black, $alpha: .2);
+        border-radius: 1rem;
+        color: rgba($color-black, $alpha: 1);
+        display: table;
+        overflow: hidden;
+        
+    }
+
+    &__left {
+        width: 33.3333333%;
+        display: table-cell;
+    }
+
+    &__right {
+        width: 66.66666667%;
+        display: table-cell;
+        vertical-align: middle;
+        padding: 3rem 5rem;
+        position: absolute;
+        text-align: center;
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+    }
+
+    &__text {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        text-align: justify;
+
+        hyphens: auto;
+
+        &--ul{
+            list-style: none;
+        }
+
+        &--li{
+                margin-bottom: 1rem;
+                text-align: center;
+        }
+    }
+
+
+    // Open States
+    &:target {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__close {
+
+        &:link,
+        &:visited {
+            color: rgba($color-gold-dark, .8);
+            position: absolute;
+            top: 2.5rem;
+            right: 2.5rem;
+            text-decoration: none;
+            font-size: 3rem;
+            display: inline-block;
+            transition: all .2s;
+            line-height: 1;
+        }
+
+        &:hover {
+            color: rgba($color-black, $alpha: .8);
+        }
+    }
+}

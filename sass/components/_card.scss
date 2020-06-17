@@ -1,0 +1,239 @@
+.card {
+
+    // FUNCIONALIDADE
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position: relative;
+    height: 26rem;
+    cursor: pointer;
+
+    &__side {
+        height: 26rem;
+        transition: all 1s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        border-radius: .5rem;
+        // overflow: hidden;
+        box-shadow: -1em 1rem .5rem rgba($color-black, .1);
+
+        &--front {
+            background-color: rgba($color-black, .9);
+        }
+
+        &--back {
+            background-image: linear-gradient(to right bottom,
+                    rgba($color-gray-dark, .9),
+                    rgba($color-black, 1),
+                    rgba($color-gray-dark, .9));
+            transform: rotateY(180deg);
+        }
+
+    }
+
+    &:hover &__side--front {
+        transform: rotateY(-180deg);
+    }
+
+    &:hover &__side--back {
+        transform: rotateY(0);
+    }
+
+    // CAPAS
+
+    &__picture {
+        background-size: cover;
+        height: 26rem;
+
+        &--1 {
+            background-image: url(../img/books/MakeYourBed.jpg);
+        }
+
+        &--2 {
+            background-image: url(../img/books/GiveOrTake.jpg);
+        }
+
+        &--3 {
+            background-image: url(../img/books/TheTestament.jpg);
+        }
+
+        &--4 {
+            background-image: url(../img/books/OpesoDoPassaroMorto.jpg);
+        }
+
+        &--5 {
+            background-image: url(../img/books/OsolEoPeixe.jpg);
+        }
+
+        &--6 {
+            background-image: url(../img/books/Fahrenheit451.jpg);
+        }
+
+        &--7 {
+            background-image: url(../img/books/ABCdeFernandoPessoa.jpg);
+        }
+
+        &--8 {
+            background-image: url(../img/books/AprincesaSalvaAsiMesmaNesseLivro.jpg);
+        }
+
+        &--9 {
+            background-image: url(../img/books/OdioAdemocracia.jpg);
+        }
+
+        &--10 {
+            background-image: url(../img/books/Apeste.jpg);
+        }
+
+        &--11 {
+            background-image: url(../img/books/AsAventurasDeTomSawyer.jpg);
+        }
+
+        &--12 {
+            background-image: url(../img/books/PresidentBarackObama.jpg);
+        }
+
+        &--13 {
+            background-image: url(../img/books/OamanhaNaoEstaAvenda.jpg);
+        }
+
+        &--14 {
+            background-image: url(../img/books/OmagicoDeOz.jpg);
+        }
+
+        &--15 {
+            background-image: url(../img/books/AinfaciaDoBrasil.jpg);
+        }
+
+        &--16 {
+            background-image: url(../img/books/SejamosTodosFeministas.jpg);
+        }
+
+        &--17 {
+            background-image: url(../img/books/MulheresRacaClasse.jpg);
+        }
+
+        &--18 {
+            background-image: url(../img/books/amanhaVaiSerMaior.jpg);
+        }
+
+        // &--19 {
+        //     background-image: url(../img/books/Apeste.jpg);
+        // }
+
+        // &--20 {
+        //     background-image: url(../img/books/Apeste.jpg);
+        // }
+
+        // &--21 {
+        //     background-image: url(../img/books/Apeste.jpg);
+        // }
+
+        // &--22 {
+        //     background-image: url(../img/books/Apeste.jpg);
+        // }
+
+        // &--23 {
+        //     background-image: url(../img/books/Apeste.jpg);
+        // }
+
+        // &--24 {
+        //     background-image: url(../img/books/Apeste.jpg);
+        // }
+    }
+
+    &__heading-month {
+        position: absolute;
+        top:0;
+        left: 0;
+        text-align: right;
+        font-size: 1.3rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        border-radius: .5rem;
+        padding: .1rem .2rem;
+        color: rgba($color-white, .8);
+        background-color: rgba($color-black, .7);
+    }
+
+    @include respond(tab-port){
+
+            &__side {
+                width: 40%;
+            }
+    }
+
+    @include respond(phone) {
+
+        &__side {
+            width: 60%;
+        }
+    }
+}
+
+
+
+
+ // BOOK
+
+ .book {
+     padding: 0 .5rem;
+     color: rgba($color-white, 1);
+     font-size: 1.4rem;
+     text-align: left;
+     margin: 1rem 0 0 1rem;
+
+     &__title {
+         padding: .6rem;
+         text-transform: uppercase;
+         color: rgba($color-gold, 1);
+        //  font-size: 2rem;
+         text-align: center;
+         margin-top: 1rem;
+     }
+
+     &__author {}
+
+     &__number-pages {}
+
+     &__genres {
+         ul {
+             list-style: none;
+             margin: 1rem 1rem 1rem 0;
+             
+
+             li {
+                font-size: 1.2rem;
+                text-align: center;
+                margin-top: .5rem;
+                
+                &:not(:last-child){
+                    padding-bottom:1px;
+                    background:
+                        linear-gradient(to left,
+                        rgba($color-gold, .1) 0%,
+                        rgba($color-gold, .2) 12%,
+                        rgba($color-gold, .7) 47%,
+                        rgba($color-gold, .1) 100%) left bottom transparent no-repeat;
+                    background-size:100% 1px;
+                }
+            
+            }
+         }
+     }
+
+     &__span {
+         color: rgba($color-gold, 1);
+     }
+ }
+
+
+ .col-5{
+     @include respond(tab-port){
+         opacity: 0;
+         display: none;
+     }
+ }

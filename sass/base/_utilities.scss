@@ -1,0 +1,74 @@
+.u-center-text{
+    text-align: center;
+}
+
+.u-margin-botton-8{
+    margin-bottom: 8rem;
+
+    @include respond(tab-port) {
+        margin-bottom: 2.5rem;
+    }
+}
+
+.u-margin-botton-small {
+    margin-bottom: 1.5rem;
+
+    @include respond(tab-port) {
+        margin-bottom: 1rem;
+    }
+}
+
+.u-margin-botton-medium {
+    margin-bottom: 2rem;
+}
+
+.u-margin-botton-big {
+    margin-bottom: 3rem;
+
+    @include respond(tab-port){
+        margin-bottom: 1rem;
+    }
+}
+
+
+.u-margin-top-small{
+    margin-top: 1.5rem;
+
+    // @include respond(tab-port) {
+    //     margin-top: -1rem;
+    // }
+}
+
+.u-margin-top-medium {
+    margin-top: 3.5rem;
+}
+
+.u-margin-top-big{
+    margin-top: 8rem;
+
+    @include respond(tab-port) {
+        margin-top: 10rem;
+    }
+}
+
+.u-botton-viajar{
+    top: 47rem;
+
+    &-1{
+        @include respond(tab-port) {
+            opacity: 0;
+            display: none;
+        }
+    }
+    
+    &-2{
+        opacity: 0;
+        display: none;
+
+        @include respond(tab-port) {
+            opacity: 1;
+            margin-top: 2rem;
+        }
+    }
+
+}

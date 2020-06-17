@@ -1,0 +1,89 @@
+.story{
+    width: 75%;
+    margin: 0 auto;
+    background-color: rgba($color-white, 1);
+    box-shadow: 0 2rem 2rem rgba($color-black, $alpha: .4);
+    border-radius: 1rem;
+    padding: 3.5rem 6.2rem;
+    transform: skewX(-12deg);
+    // height: 22rem;
+
+    @include respond(tab-port){
+        width: 100%;
+        padding: 2rem 4rem;
+    }
+
+    @include respond(phone){
+        transform: skewX(0);
+        margin-left: 0;
+    }
+
+    &__shape{
+        width: 15rem;
+        height: 15rem;
+        float: left;
+        transform: translateX(-1.5rem) skewX(12deg);
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
+        margin: 1rem;
+
+        @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+            -webkit-clip-path: circle(50% at 50% 50%);
+            clip-path: circle(50% at 50% 50%);
+            -webkit-shape-outside: circle(50% at 50% 50%);
+            shape-outside: circle(50% at 50% 50%);
+            border-radius: none;
+        }
+
+        @include respond(phone) {
+            transform: translateX(-1.5rem) skewX(0);
+        }
+    }
+
+    &__image{
+        height: 100%;
+        transform: translate(-1.2rem, -1rem) scale(1.5);
+        // backface-visibility: hidden;
+        transition: all .4s;
+
+        &--girl{
+            transform: translate(-2.5rem, .8rem) scale(1.1);
+        }
+    }
+
+    &__text{
+        transform: skewX(12deg);
+
+        @include respond(phone) {
+            transform: skewX(0);
+            text-align: center;
+        }
+    }
+
+    &__caption{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 20%);
+        color: $color-white;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        text-align: center;
+        opacity: 0;
+        transition: all 1s;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+
+    &:hover &__caption{
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    &:hover &__image{
+        transform: translate(-1.2rem, -1rem) scale(1.1);
+        filter: blur(1px) brightness(90%);
+        
+    }
+}

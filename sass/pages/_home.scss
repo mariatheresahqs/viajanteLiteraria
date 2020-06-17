@@ -1,0 +1,124 @@
+.section-about {
+  background-color: rgba($color-white, 1);
+  padding: 10rem 0;
+  margin-top: -10rem;
+  transform: skewY(-6deg);
+
+  &>* {
+    transform: skewY(6deg);
+
+  }
+
+  @include respond(tab-port){
+    padding: 5rem 0;
+  }
+}
+
+.section-features {
+  padding: 12rem 0;
+  background-image: linear-gradient(to right bottom,
+      rgba($color-gold-dark, .5),
+      rgba($color-gold, .5),
+      rgba($color-gold-dark, .5)),
+    url(../img/Bg-booksLibraryc.png);
+  background-size: cover;
+
+  -ms-transform: skewY(-6deg);
+  -webkit-transform: skewY(-6deg);
+  -moz-transform: skewY(-6deg)v;
+  -o-transform: skewY(-6deg);
+  transform: skewY(-6deg);
+
+  &>* {
+    -ms-transform: skewY(6deg);
+    -webkit-transform: skewY(6deg);
+    -moz-transform: skewY(6deg)v;
+    -o-transform: skewY(6deg);
+    transform: skewY(6deg);
+  }
+
+  @include respond(tab-port) {
+    padding: 5rem 0;
+  }
+}
+
+.section-books {
+  background-color: rgba($color-white, 1);
+  padding: 20rem 0 10rem 0;
+  margin-top: -10rem;
+  color: black;
+
+  @include respond(tab-port) {
+    padding: 15rem 0 3rem 0;
+  }
+
+}
+
+.section-story {
+  padding: 10rem 0 10rem 0;
+  position: relative;
+
+  @include respond(tab-port) {
+    padding: 5rem 0;
+  }
+}
+
+.section-contact {
+  background-image: linear-gradient(to right bottom,
+      rgba($color-gold-dark, .5),
+      rgba($color-gold, .6),
+      rgba($color-gold-dark, .5)),
+      url(../img/paper.jpg);
+  padding: 10rem 15rem;
+
+  @include respond(tab-port) {
+    padding: 5rem 0;
+  }
+}
+
+.contact {
+  color: rgba($color-black, 1);
+  background-image: linear-gradient(105deg, 
+  rgba($color-white, .85) 0%, 
+  rgba($color-white, .85) 54%, 
+  rgba($color-black, .1) 54%),
+  url(../img/coffeeBooks.jpg);
+  background-size: cover;
+  border-radius: 1rem;
+  box-shadow: -.1rem 1rem 2rem rgba($color-black, $alpha: .4);
+
+  height: 51rem;
+
+  @include respond(tab-land){
+    background-image: linear-gradient(105deg,
+      rgba($color-white, .85) 0%,
+      rgba($color-white, .65) 60%,
+      rgba($color-black, .1) 60%),
+    url(../img/coffeeBooks.jpg);
+    background-size: auto;
+    height: 52rem;
+  }
+
+  @include respond(tab-port) {
+    background-image: linear-gradient(105deg,
+        rgba($color-white, .85) 0%,
+        rgba($color-white, .85) 100%,
+        rgba($color-black, .1) 100%),
+      url(../img/coffeeBooks.jpg);
+  }
+
+  &__form{
+    width: 60%;
+    padding: 2.5rem 6rem;
+
+    @include respond(tab-land){
+      width: 65%;
+      padding: 1.5rem 4rem;
+
+    }
+
+    @include respond(tab-port) {
+      width: 100%;
+    }
+  }
+}
