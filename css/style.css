@@ -503,6 +503,8 @@ body {
       background-image: url(../img/books/MulheresRacaClasse.jpg); }
     .card__picture--18 {
       background-image: url(../img/books/amanhaVaiSerMaior.jpg); }
+    .card__picture--19 {
+      background-image: url(../img/books/1984.jpg); }
   .card__heading-month {
     position: absolute;
     top: 0;
