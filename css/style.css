@@ -222,6 +222,9 @@ body {
         opacity: 1;
         margin-top: 2rem; } }
 
+.u-btn-block {
+  display: block; }
+
 .btn, .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
@@ -448,6 +451,11 @@ body {
   overflow: hidden;
   box-shadow: -1rem 1rem 0.1rem rgba(0, 0, 0, 0.3);
   border-radius: .5rem; }
+  .card--special {
+    visibility: hidden; }
+    @media (max-width: 37.5em) {
+      .card--special {
+        display: none; } }
   .card:hover {
     box-shadow: none;
     transform: scale(1.1);

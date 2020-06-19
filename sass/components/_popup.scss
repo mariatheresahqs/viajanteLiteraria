@@ -25,14 +25,14 @@
             display: contents;
             position: absolute;
         }
-        
+
     }
 
     &__left {
         width: 33.3333333%;
         display: table-cell;
 
-        @include respond(tab-port){
+        @include respond(tab-port) {
             display: none;
         }
     }
@@ -47,10 +47,10 @@
 
         @include respond(tab-port) {
             width: 100%;
-             padding: 3rem 5rem;
-             position: relative;
-             background-color: rgba($color-white, 1);
-             top: 5rem;
+            padding: 3rem 5rem;
+            position: relative;
+            background-color: rgba($color-white, 1);
+            top: 5rem;
         }
 
         @include respond(phone) {
@@ -78,13 +78,13 @@
             margin-bottom: .5rem;
         }
 
-        &--ul{
+        &--ul {
             list-style: none;
         }
 
-        &--li{
-                margin-bottom: 1rem;
-                text-align: center;
+        &--li {
+            margin-bottom: 1rem;
+            text-align: center;
         }
     }
 
@@ -110,9 +110,9 @@
             line-height: 1;
 
             @include respond(phone) {
-               top: 1rem;
-               right: 1em;
-               font-size: 2rem;
+                top: 1rem;
+                right: 1em;
+                font-size: 2rem;
             }
         }
 
