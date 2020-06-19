@@ -1,27 +1,37 @@
 .card {
-
     // FUNCIONALIDADE
     perspective: 150rem;
     -moz-perspective: 150rem;
     position: relative;
-    height: 26rem;
+    height: 24rem;
     cursor: pointer;
+    transition: all .6s ease;
+    overflow: hidden;
+    box-shadow: -1rem 1rem .1rem rgba($color-black, .3);
+    border-radius: .5rem;
+
+    &:hover{
+        box-shadow: none;
+        transform: scale(1.1);
+        z-index: 11;
+    }
 
     &__side {
-        height: 26rem;
+        height: 24rem;
         transition: all 1s ease;
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
         backface-visibility: hidden;
         -webkit-backface-visibility: hidden;
-        border-radius: .5rem;
-        // overflow: hidden;
-        box-shadow: -1em 1rem .5rem rgba($color-black, .1);
+        overflow: hidden;
+
+        // adaptacao flex
+        min-width: 100%;
+        display: block;
 
         &--front {
-            background-color: rgba($color-black, .9);
+            background-color: rgba($color-black, .1);
         }
 
         &--back {
@@ -46,108 +56,14 @@
 
     &__picture {
         background-size: cover;
-        height: 26rem;
+        height: 24rem;
+        width: 100%;
 
-        &--1 {
-            background-image: url(../img/books/MakeYourBed.jpg);
-        }
-
-        &--2 {
-            background-image: url(../img/books/GiveOrTake.jpg);
-        }
-
-        &--3 {
-            background-image: url(../img/books/TheTestament.jpg);
-        }
-
-        &--4 {
-            background-image: url(../img/books/OpesoDoPassaroMorto.jpg);
-        }
-
-        &--5 {
-            background-image: url(../img/books/OsolEoPeixe.jpg);
-        }
-
-        &--6 {
-            background-image: url(../img/books/Fahrenheit451.jpg);
-        }
-
-        &--7 {
-            background-image: url(../img/books/ABCdeFernandoPessoa.jpg);
-        }
-
-        &--8 {
-            background-image: url(../img/books/AprincesaSalvaAsiMesmaNesseLivro.jpg);
-        }
-
-        &--9 {
-            background-image: url(../img/books/OdioAdemocracia.jpg);
-        }
-
-        &--10 {
-            background-image: url(../img/books/Apeste.jpg);
-        }
-
-        &--11 {
-            background-image: url(../img/books/AsAventurasDeTomSawyer.jpg);
-        }
-
-        &--12 {
-            background-image: url(../img/books/PresidentBarackObama.jpg);
-        }
-
-        &--13 {
-            background-image: url(../img/books/OamanhaNaoEstaAvenda.jpg);
-        }
-
-        &--14 {
-            background-image: url(../img/books/OmagicoDeOz.jpg);
-        }
-
-        &--15 {
-            background-image: url(../img/books/AinfaciaDoBrasil.jpg);
-        }
-
-        &--16 {
-            background-image: url(../img/books/SejamosTodosFeministas.jpg);
-        }
-
-        &--17 {
-            background-image: url(../img/books/MulheresRacaClasse.jpg);
-        }
-
-        &--18 {
-            background-image: url(../img/books/amanhaVaiSerMaior.jpg);
-        }
-
-        &--19 {
-            background-image: url(../img/books/1984.jpg);
-        }
-
-        // &--20 {
-        //     background-image: url(../img/books/Apeste.jpg);
-        // }
-
-        // &--21 {
-        //     background-image: url(../img/books/Apeste.jpg);
-        // }
-
-        // &--22 {
-        //     background-image: url(../img/books/Apeste.jpg);
-        // }
-
-        // &--23 {
-        //     background-image: url(../img/books/Apeste.jpg);
-        // }
-
-        // &--24 {
-        //     background-image: url(../img/books/Apeste.jpg);
-        // }
     }
 
     &__heading-month {
         position: absolute;
-        top:0;
+        top: 0;
         left: 0;
         text-align: right;
         font-size: 1.3rem;
@@ -159,81 +75,80 @@
         background-color: rgba($color-black, .7);
     }
 
-    @include respond(tab-port){
-
-            &__side {
-                width: 40%;
-            }
-    }
-
-    @include respond(phone) {
-
-        &__side {
-            width: 60%;
-        }
-    }
 }
 
 
 
 
- // BOOK
+// BOOK
 
- .book {
-     padding: 0 .5rem;
-     color: rgba($color-white, 1);
-     font-size: 1.4rem;
-     text-align: left;
-     margin: 1rem 0 0 1rem;
+.book {
+    padding: 0 .5rem;
+    color: rgba($color-white, 1);
+    font-size: 1.3rem;
+    text-align: left;
+    margin: .5rem 0 0 .5rem;
 
-     &__title {
-         padding: .6rem;
-         text-transform: uppercase;
-         color: rgba($color-gold, 1);
+    &__title {
+        padding: .6rem;
+        text-transform: uppercase;
+        color: rgba($color-gold, 1);
         //  font-size: 2rem;
-         text-align: center;
-         margin-top: 1rem;
-     }
+        text-align: center;
+        margin-top: 1rem;
+    }
 
-     &__author {}
+    &__author {}
 
-     &__number-pages {}
+    &__number-pages {}
 
-     &__genres {
-         ul {
-             list-style: none;
-             margin: 1rem 1rem 1rem 0;
-             
+    &__genres {
+        ul {
+            list-style: none;
+            margin: .5rem .5rem .5rem 0;
 
-             li {
-                font-size: 1.2rem;
+
+            li {
+                font-size: 1.1rem;
                 text-align: center;
                 margin-top: .5rem;
-                
-                &:not(:last-child){
-                    padding-bottom:1px;
+
+                &:not(:last-child) {
+                    padding-bottom: 1px;
                     background:
                         linear-gradient(to left,
-                        rgba($color-gold, .1) 0%,
-                        rgba($color-gold, .2) 12%,
-                        rgba($color-gold, .7) 47%,
-                        rgba($color-gold, .1) 100%) left bottom transparent no-repeat;
-                    background-size:100% 1px;
+                            rgba($color-gold, .1) 0%,
+                            rgba($color-gold, .2) 12%,
+                            rgba($color-gold, .7) 47%,
+                            rgba($color-gold, .1) 100%) left bottom transparent no-repeat;
+                    background-size: 100% 1px;
                 }
-            
+
             }
-         }
-     }
+        }
+    }
 
-     &__span {
-         color: rgba($color-gold, 1);
-     }
- }
+    &__span {
+        color: rgba($color-gold, 1);
+    }
+}
 
 
- .col-5{
-     @include respond(tab-port){
-         opacity: 0;
-         display: none;
-     }
- }
+.flex {
+
+    &__cards {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 90rem;
+        margin: 0 auto;
+
+        &>.card {
+            flex: 1 1 15rem;
+            margin: 1rem 1rem 1rem 2rem;
+
+            @include respond(phone) {
+                flex: 1 1 14rem;
+            }
+        }
+    }
+}

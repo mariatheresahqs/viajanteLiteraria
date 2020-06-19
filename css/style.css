@@ -442,21 +442,29 @@ body {
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  height: 26rem;
-  cursor: pointer; }
+  height: 24rem;
+  cursor: pointer;
+  transition: all .6s ease;
+  overflow: hidden;
+  box-shadow: -1rem 1rem 0.1rem rgba(0, 0, 0, 0.3);
+  border-radius: .5rem; }
+  .card:hover {
+    box-shadow: none;
+    transform: scale(1.1);
+    z-index: 11; }
   .card__side {
-    height: 26rem;
+    height: 24rem;
     transition: all 1s ease;
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    border-radius: .5rem;
-    box-shadow: -1em 1rem 0.5rem rgba(0, 0, 0, 0.1); }
+    overflow: hidden;
+    min-width: 100%;
+    display: block; }
     .card__side--front {
-      background-color: rgba(0, 0, 0, 0.9); }
+      background-color: rgba(0, 0, 0, 0.1); }
     .card__side--back {
       background-image: linear-gradient(to right bottom, rgba(38, 38, 38, 0.9), black, rgba(38, 38, 38, 0.9));
       transform: rotateY(180deg); }
@@ -466,45 +474,8 @@ body {
     transform: rotateY(0); }
   .card__picture {
     background-size: cover;
-    height: 26rem; }
-    .card__picture--1 {
-      background-image: url(../img/books/MakeYourBed.jpg); }
-    .card__picture--2 {
-      background-image: url(../img/books/GiveOrTake.jpg); }
-    .card__picture--3 {
-      background-image: url(../img/books/TheTestament.jpg); }
-    .card__picture--4 {
-      background-image: url(../img/books/OpesoDoPassaroMorto.jpg); }
-    .card__picture--5 {
-      background-image: url(../img/books/OsolEoPeixe.jpg); }
-    .card__picture--6 {
-      background-image: url(../img/books/Fahrenheit451.jpg); }
-    .card__picture--7 {
-      background-image: url(../img/books/ABCdeFernandoPessoa.jpg); }
-    .card__picture--8 {
-      background-image: url(../img/books/AprincesaSalvaAsiMesmaNesseLivro.jpg); }
-    .card__picture--9 {
-      background-image: url(../img/books/OdioAdemocracia.jpg); }
-    .card__picture--10 {
-      background-image: url(../img/books/Apeste.jpg); }
-    .card__picture--11 {
-      background-image: url(../img/books/AsAventurasDeTomSawyer.jpg); }
-    .card__picture--12 {
-      background-image: url(../img/books/PresidentBarackObama.jpg); }
-    .card__picture--13 {
-      background-image: url(../img/books/OamanhaNaoEstaAvenda.jpg); }
-    .card__picture--14 {
-      background-image: url(../img/books/OmagicoDeOz.jpg); }
-    .card__picture--15 {
-      background-image: url(../img/books/AinfaciaDoBrasil.jpg); }
-    .card__picture--16 {
-      background-image: url(../img/books/SejamosTodosFeministas.jpg); }
-    .card__picture--17 {
-      background-image: url(../img/books/MulheresRacaClasse.jpg); }
-    .card__picture--18 {
-      background-image: url(../img/books/amanhaVaiSerMaior.jpg); }
-    .card__picture--19 {
-      background-image: url(../img/books/1984.jpg); }
+    height: 24rem;
+    width: 100%; }
   .card__heading-month {
     position: absolute;
     top: 0;
@@ -517,19 +488,13 @@ body {
     padding: .1rem .2rem;
     color: rgba(255, 255, 255, 0.8);
     background-color: rgba(0, 0, 0, 0.7); }
-  @media (max-width: 56.25em) {
-    .card__side {
-      width: 40%; } }
-  @media (max-width: 37.5em) {
-    .card__side {
-      width: 60%; } }
 
 .book {
   padding: 0 .5rem;
   color: white;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   text-align: left;
-  margin: 1rem 0 0 1rem; }
+  margin: .5rem 0 0 .5rem; }
   .book__title {
     padding: .6rem;
     text-transform: uppercase;
@@ -538,9 +503,9 @@ body {
     margin-top: 1rem; }
   .book__genres ul {
     list-style: none;
-    margin: 1rem 1rem 1rem 0; }
+    margin: .5rem .5rem .5rem 0; }
     .book__genres ul li {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       text-align: center;
       margin-top: .5rem; }
       .book__genres ul li:not(:last-child) {
@@ -550,10 +515,17 @@ body {
   .book__span {
     color: #e0b939; }
 
-@media (max-width: 56.25em) {
-  .col-5 {
-    opacity: 0;
-    display: none; } }
+.flex__cards {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 90rem;
+  margin: 0 auto; }
+  .flex__cards > .card {
+    flex: 1 1 15rem;
+    margin: 1rem 1rem 1rem 2rem; }
+    @media (max-width: 37.5em) {
+      .flex__cards > .card {
+        flex: 1 1 14rem; } }
 
 .composition {
   position: relative; }
@@ -716,9 +688,16 @@ body {
     color: black;
     display: table;
     overflow: hidden; }
+    @media (max-width: 56.25em) {
+      .popup__content {
+        display: contents;
+        position: absolute; } }
   .popup__left {
     width: 33.3333333%;
     display: table-cell; }
+    @media (max-width: 56.25em) {
+      .popup__left {
+        display: none; } }
   .popup__right {
     width: 66.66666667%;
     display: table-cell;
@@ -726,6 +705,17 @@ body {
     padding: 3rem 5rem;
     position: absolute;
     text-align: center; }
+    @media (max-width: 56.25em) {
+      .popup__right {
+        width: 100%;
+        padding: 3rem 5rem;
+        position: relative;
+        background-color: white;
+        top: 5rem; } }
+    @media (max-width: 37.5em) {
+      .popup__right {
+        padding: 2rem 2rem;
+        top: 2rem; } }
   .popup__img {
     display: block;
     width: 100%; }
@@ -733,7 +723,12 @@ body {
     font-size: 1.5rem;
     margin-bottom: 2rem;
     text-align: justify;
+    text-indent: 7%;
     hyphens: auto; }
+    @media (max-width: 37.5em) {
+      .popup__text {
+        font-size: 1.4rem;
+        margin-bottom: .5rem; } }
     .popup__text--ul {
       list-style: none; }
     .popup__text--li {
@@ -752,6 +747,11 @@ body {
     display: inline-block;
     transition: all .2s;
     line-height: 1; }
+    @media (max-width: 37.5em) {
+      .popup__close:link, .popup__close:visited {
+        top: 1rem;
+        right: 1em;
+        font-size: 2rem; } }
   .popup__close:hover {
     color: rgba(0, 0, 0, 0.8); }
 
@@ -1115,7 +1115,8 @@ body {
   color: black; }
   @media (max-width: 56.25em) {
     .section-books {
-      padding: 15rem 0 3rem 0; } }
+      padding: 15rem 0 3rem 0;
+      margin-top: -12rem; } }
 
 .section-story {
   padding: 10rem 0 10rem 0;
