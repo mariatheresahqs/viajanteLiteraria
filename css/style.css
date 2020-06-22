@@ -509,13 +509,24 @@ body {
     color: #e0b939;
     text-align: center;
     margin-top: 1rem; }
+    @media (max-width: 37.5em) {
+      .book__title {
+        padding: .3rem;
+        margin-top: .5em; } }
   .book__genres ul {
     list-style: none;
     margin: .5rem .5rem .5rem 0; }
+    @media (max-width: 37.5em) {
+      .book__genres ul {
+        margin: .2rem .5rem .2rem 0; } }
     .book__genres ul li {
       font-size: 1.1rem;
       text-align: center;
       margin-top: .5rem; }
+      @media (max-width: 37.5em) {
+        .book__genres ul li {
+          font-size: 1rem;
+          margin-top: .1rem; } }
       .book__genres ul li:not(:last-child) {
         padding-bottom: 1px;
         background: linear-gradient(to left, rgba(224, 185, 57, 0.1) 0%, rgba(224, 185, 57, 0.2) 12%, rgba(224, 185, 57, 0.7) 47%, rgba(224, 185, 57, 0.1) 100%) left bottom transparent no-repeat;
@@ -533,7 +544,8 @@ body {
     margin: 1rem 1rem 1rem 2rem; }
     @media (max-width: 37.5em) {
       .flex__cards > .card {
-        flex: 1 1 14rem; } }
+        flex: 1 1 10rem;
+        margin: 1rem 1rem 1rem 1.7rem; } }
 
 .composition {
   position: relative; }

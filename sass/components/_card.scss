@@ -105,6 +105,12 @@
         //  font-size: 2rem;
         text-align: center;
         margin-top: 1rem;
+
+        @include respond(phone) {
+           padding: .3rem;
+            margin-top: .5em;
+        }
+
     }
 
     &__author {}
@@ -116,11 +122,19 @@
             list-style: none;
             margin: .5rem .5rem .5rem 0;
 
+            @include respond(phone) {
+                margin: .2rem .5rem .2rem 0;
+             }
 
             li {
                 font-size: 1.1rem;
                 text-align: center;
                 margin-top: .5rem;
+
+                 @include respond(phone) {
+                     font-size: 1rem;
+                     margin-top: .1rem;
+                 }
 
                 &:not(:last-child) {
                     padding-bottom: 1px;
@@ -156,7 +170,8 @@
             margin: 1rem 1rem 1rem 2rem;
 
             @include respond(phone) {
-                flex: 1 1 14rem;
+                flex: 1 1 10rem;
+                margin: 1rem 1rem 1rem 1.7rem;
             }
         }
     }
