@@ -11,6 +11,13 @@
     visibility: hidden;
     transition: all 1s;
 
+    @supports (-webkit-backdrop-filter: blur(1rem)) or (backdrop-filter: blur(.5rem)){
+        -webkit-backdrop-filter: blur(1rem);
+        backdrop-filter: blur(.5rem);
+        background-image: linear-gradient(rgba($color-gold, .8), rgba($color-gold-dark, .7));
+    }
+
+
     &__content {
         @include absCenter;
         width: 75%;
@@ -25,6 +32,8 @@
             display: contents;
             position: absolute;
         }
+
+
 
     }
 
@@ -55,7 +64,7 @@
 
         @include respond(phone) {
             padding: 2rem 2rem;
-            top: 2rem;
+            top: 5rem;
         }
     }
 

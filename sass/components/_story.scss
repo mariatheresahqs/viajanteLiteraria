@@ -87,3 +87,9 @@
         
     }
 }
+
+.viajante{
+    @include respond(phone){
+        display: none;
+    }
+}

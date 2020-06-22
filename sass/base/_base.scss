@@ -35,3 +35,7 @@ body {
     }
 }
 
+::selection{
+    background-color: $color-gold-dark;
+    color: $color-gray-dark;
+}

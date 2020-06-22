@@ -31,8 +31,8 @@
         position: absolute;
         top: 0;
         left: 0;
-        backface-visibility: hidden;
         -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
         overflow: hidden;
 
         // adaptacao flex

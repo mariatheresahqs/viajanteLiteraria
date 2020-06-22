@@ -1,21 +1,26 @@
 .header {
-    height: 95vh;
+    height: 85vh;
     background-image: radial-gradient(circle,
-        rgba($color-gold-dark, .5),
-        rgba($color-gold, .5)),
+            rgba($color-gold-dark, .5),
+            rgba($color-gold, .5)),
         url(../img/Bg-TheBook.jpg);
     background-size: cover;
     background-position: top;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 95vh, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 95vh, 0 100%);
+
     position: relative;
+
+    @supports(clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 95vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 95vh, 0 100%);
+        height: 95vh;
+    }
 
     &__logo-box {
         position: absolute;
         top: 4rem;
         left: 4rem;
 
-        @include respond(tab-port){
+        @include respond(tab-port) {
             top: 3rem;
             left: 3rem;
         }
@@ -24,7 +29,7 @@
     &__logo {
         height: 10rem;
 
-        @include respond(tab-port){
+        @include respond(tab-port) {
             height: 8rem;
         }
 
@@ -55,4 +60,3 @@
         }
     }
 }
-
